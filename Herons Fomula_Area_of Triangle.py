@@ -12,12 +12,18 @@ def getTriangleArea(x, y):
     p=math.sqrt((((x[0]-x[1])**2)+((y[0]-y[1])**2)))
     q=math.sqrt((((x[1]-x[2])**2)+((y[1]-y[2])**2)))
     r=math.sqrt((((x[0]-x[2])**2)+((y[0]-y[2])**2)))
-
+    print("p=",p)
+    print("q=",q)
+    print("r=",r)
     s=(p+q+r)/2
+    print("s=",s)
 
     area=math.sqrt(s*(s-p)*(s-q)*(s-r))
-    
-    return math.ceil(area)
+    print("area=",area)
+    if(area-math.floor(area)>0.5):
+        return math.ceil(area)
+    else:
+        return math.floor(area)
 
 x=(0,3,6)
 y=(0,3,0)
