@@ -23,7 +23,7 @@ def time_input(counter):
 #To check if the time entered by user is in valid format and between 24 hours cycle, if yes then calculate the minutes of work for that day    
 def validity_of_time(entry_time,exit_time):
     global counter
-    if (entry_time>2400 or exit_time>2400 or entry_time>exit_time):
+    if (entry_time>2400 or exit_time>2400 or entry_time>exit_time or (entry_time%100)>60 or (exit_time%100)>60):
         while(counter<=2):
             print("\n***ERROR time not in valid format or range Error*** Try Again")
             print("\nNumber of Attempts",counter)
