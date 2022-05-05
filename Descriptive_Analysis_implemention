@@ -1,0 +1,20 @@
+import numpy as np
+#Function to do the calculation
+def descriptive_stats(a):
+    m1=a.sum()
+    m2=a.mean()
+    m3=np.percentile(a,[75,50,25])
+    m4=np.std(a)
+    return m1,m2,m3,m4
+
+#array of number  
+p=np.array([5900,4500,6700,4900,5000,6900,5800])
+
+#function call with original array
+descriptive_stats(p)      #(39700, 5671.428571428572, array([6300., 5800., 4950.]), 849.72984902646)
+
+#Checking the impact on descriptive stats if numbers are increased by 5%
+descriptive_stats(p*1.05) #(41685.0, 5955.0, array([6615. , 6090. , 5197.5]), 892.2163414777831)
+
+#checking the impact of inceasing each value by by 5
+descriptive_stats(p+5)    #(39735, 5676.428571428572, array([6305., 5805., 4955.]), 849.72984902646)
